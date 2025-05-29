@@ -102,18 +102,20 @@ dotnet ef database update
 **Request:**
 ```json
 {
-  "nome": "Dispositivo A",
-  "localizacao": "Coordenada XYZ"
+  "deviceId": "string",
+  "name": "string",
+  "status": "string",
+  "lastSeen": "2025-05-29T18:11:00.254Z"
 }
 
 Response:
 ```json
 {
-  "id": 1,
-  "nome": "Dispositivo A",
-  "localizacao": "Coordenada XYZ",
-  "dataCriacao": "2025-05-29T14:35:00"
-}
+    "deviceId": "abc123",
+    "name": "Bruno",
+    "status": "Rua Pio XI",
+    "lastSeen": "2025-05-29T18:15:14.058"
+  }
 ```
 
 📋 Listar Todos os Dispositivos
@@ -123,16 +125,25 @@ Response:
 ```json
 [
   {
-    "id": 1,
-    "nome": "Dispositivo A",
-    "localizacao": "Coordenada XYZ"
-  },
-  {
-    "id": 2,
-    "nome": "Dispositivo B",
-    "localizacao": "Base Central"
+    "deviceId": "abc123",
+    "name": "Bruno",
+    "status": "Rua Pio XI",
+    "lastSeen": "2025-05-29T18:15:14.058"
   }
 ]
+```
+
+📋 Ediatar Todos os Dispositivos
+PUT /api/devices
+
+Response:
+```json
+  {
+  "deviceId": "abc123",
+  "name": "Bruno Da Silva",
+  "status": "Rua Pio XI",
+  "lastSeen": "2025-05-29T18:18:36.517Z"
+}
 ```
 
 ✉️ Enviar uma Mensagem
@@ -141,37 +152,20 @@ POST /api/messages
 Request:
 ```json
 {
-  "conteudo": "Mensagem de teste",
-  "dispositivoId": 1
+  "sender": "string",
+  "content": "string",
+  "deviceId": "string",
+  "timestamp": "2025-05-29T18:21:28.314Z"
 }
 ```
 
 Response:
 ```json
 {
-  "id": 1,
-  "conteudo": "Mensagem de teste",
-  "dispositivoId": 1,
-  "dataEnvio": "2025-05-29T14:40:00"
+  "sender": "Chuva",
+  "content": "Chuva Forte",
+  "deviceId": "abc123",
+  "timestamp": "2025-05-29T18:22:39.372Z"
 }
-```
-
-📜 Histórico de Mensagens de um Dispositivo
-GET /api/messages/dispositivo/1
-
-Response:
-```json
-[
-  {
-    "id": 1,
-    "conteudo": "Mensagem de teste",
-    "dataEnvio": "2025-05-29T14:40:00"
-  },
-  {
-    "id": 2,
-    "conteudo": "Mensagem de alerta",
-    "dataEnvio": "2025-05-29T15:10:00"
-  }
-]
 ```
 ---
