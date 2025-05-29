@@ -19,8 +19,6 @@ Leonardo Da Silva Pereira - RM: 557598
 - [Como Executar](#como-executar)
 - [EndPoints da API](#endpoints-da-api)
 - [Migrations e Banco de Dados](#migrations-e-banco-de-dados)
-- [Integrantes do Projeto](#integrantes-do-projeto)
-- [Licença](#licença)
 
 ---
 
@@ -133,7 +131,7 @@ Response:
 ]
 ```
 
-📋 Ediatar Todos os Dispositivos
+📋 Editar Todos os Dispositivos
 PUT /api/devices
 
 Response:
