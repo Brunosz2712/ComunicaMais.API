@@ -110,11 +110,11 @@ dotnet ef database update
 Response:
 ```json
 {
-    "deviceId": "abc123",
-    "name": "Bruno",
-    "status": "Rua Pio XI",
-    "lastSeen": "2025-05-29T18:15:14.058"
-  }
+  "deviceId": "abc123",
+  "name": "Iphone",
+  "status": "Ativo",
+  "lastSeen": "2025-06-05T16:18:36.375Z"
+}
 ```
 
 📋 Listar Todos os Dispositivos
@@ -122,14 +122,12 @@ GET /api/devices
 
 Response:
 ```json
-[
-  {
-    "deviceId": "abc123",
-    "name": "Bruno",
-    "status": "Rua Pio XI",
-    "lastSeen": "2025-05-29T18:15:14.058"
-  }
-]
+{
+  "deviceId": "abc123",
+  "name": "Iphone",
+  "status": "Ativo",
+  "lastSeen": "2025-06-05T16:18:36.375Z"
+}
 ```
 
 📋 Editar Todos os Dispositivos
@@ -137,11 +135,11 @@ PUT /api/devices
 
 Response:
 ```json
-  {
+{
   "deviceId": "abc123",
-  "name": "Bruno Da Silva",
-  "status": "Rua Pio XI",
-  "lastSeen": "2025-05-29T18:18:36.517Z"
+  "name": "Iphone de Buno",
+  "status": "Ativo",
+  "lastSeen": "2025-06-05T16:18:36.375Z"
 }
 ```
 
@@ -162,9 +160,10 @@ Response:
 ```json
 {
   "sender": "Chuva",
-  "content": "Chuva Forte",
+  "content": "Chuva Forte na Barra Funda",
   "deviceId": "abc123",
-  "timestamp": "2025-05-29T18:22:39.372Z"
+  "timestamp": "2025-06-05T16:23:18.677Z"
 }
 ```
+## Quando dar DELETE em um Dispositivo ele apagará tudo até a mensagem associada a ele.
 ---
